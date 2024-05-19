@@ -1,0 +1,17 @@
+[package]
+name = "ownablealecairo"
+version = "0.1.0"
+edition = "2023_01"
+cairo-version = "2.4.4"
+
+# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+
+[dependencies]
+kill_switch = {git = "https://github.com/starknet-edu/kill-switch.git"}
+starknet = ">=2.4.4"
+
+[[target.starknet-contract]]
+sierra = true
+casm = true
+
+build-external-contracts = ["kill_switch::KillSwitch"]
